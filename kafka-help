@@ -6,12 +6,18 @@ bin/windows/kafka-server-start.bat config/server.properties
 
 bin/windows/kafka-topics.bat --list --zookeeper localhost:2181
 
+
 rem create input topic
-bin/windows/kafka-topics.bat --delete --zookeeper localhost:2181 --topic word-count-input
 bin/windows/kafka-topics.bat \
 --create --zookeeper localhost:2181 \
---replication-factor 1 --partitions 2 \
---topic word-count-input \
+--replication-factor 1 --partitions 1 \
+--topic rsvp-feed-string
+
+rem create input topic
+bin/windows/kafka-topics.bat \
+--create --zookeeper localhost:2181 \
+--replication-factor 1 --partitions 1 \
+--topic rsvp-feed-string \
 --config cleanup.policy=compact
 
 rem create output topic
@@ -26,7 +32,8 @@ kafka streams course
 rem exit
 
 rem verify the data has been written
-bin/windows/kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic word-count-input1 --from-beginning
+bin/windows/kafka-console-consumer.bat --bootstrap-server localhost:9092 \
+--topic rsvp-feed-string --from-beginning
 
 rem start a consumer on the output topic
 bin/windows/kafka-console-consumer.bat --bootstrap-server localhost:9092 \
