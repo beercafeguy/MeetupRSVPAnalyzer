@@ -13,6 +13,8 @@ rem start the shell
 # join 							embedded document
 
 
-> use meetup db #create database
+> use meetup_db #create database
 >db # list database
-> db.createCollection("rsvps", {capped : true, size : 6142800 }); 
+> db.createCollection("rsvps", {capped : true, size : 6142800 });
+> show collections; 
+> db.rsvps_general.find()

@@ -33,7 +33,10 @@ rem exit
 
 rem verify the data has been written
 bin/windows/kafka-console-consumer.bat --bootstrap-server localhost:9092 \
---topic rsvp-feed-string --from-beginning
+--topic rsvp-feed-string --from-beginning 
+
+
+bin/windows/kafka-topics.bat --describe --zookeeper localhost:2181 --topic rsvp-feed-string
 
 rem start a consumer on the output topic
 bin/windows/kafka-console-consumer.bat --bootstrap-server localhost:9092 \
