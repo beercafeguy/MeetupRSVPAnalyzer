@@ -2,7 +2,7 @@ package org.github.beercafeguy.distribution.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="rsvps")
+@Document(collection="rsvps_with_guests")
 public class MeetupRSVP {
 
 	private Venue venue;

@@ -3,3 +3,9 @@
 .project
 .mvn
 *.classpath
+target
+.idea
+checkpoint
+project
+spark-warehouse
+str_checkpoint

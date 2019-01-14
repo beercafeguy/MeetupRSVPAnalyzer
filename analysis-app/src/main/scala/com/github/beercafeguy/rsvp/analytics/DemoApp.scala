@@ -4,9 +4,9 @@ import org.apache.log4j.{Level, LogManager}
 import org.apache.spark.{SparkConf, SparkContext}
 
 object DemoApp {
-
   val APP_NAME: String = "Demo App"
   val CM = "local[*]"
+
 
   def main(args: Array[String]): Unit = {
 

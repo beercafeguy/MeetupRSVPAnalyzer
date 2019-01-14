@@ -16,5 +16,6 @@ rem start the shell
 > use meetup_db #create database
 >db # list database
 > db.createCollection("rsvps", {capped : true, size : 6142800 });
+> db.createCollection("rsvps_with_guests", {capped : true, size : 6142800 });
 > show collections; 
 > db.rsvps_general.find()
